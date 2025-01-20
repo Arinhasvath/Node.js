@@ -1,5 +1,3 @@
-# Node.js
-intro a nodejs
 # Cours Ludique : Les Bases de Node.js
 
 ## Introduction
@@ -60,52 +58,22 @@ Avant de commencer, assure-toi d'avoir les éléments suivants :
 
 ---
 
-## 3. Modules Natifs Importants
+## 3. Dictionnaire des Modules Natifs de Node.js
+Voici une liste des principaux modules intégrés à Node.js, classés par fonction et utilité :
 
-Node.js est livré avec des modules intégrés pour accomplir des tâches courantes. Voici les plus importants :
-
-### 3.1. **fs (File System)**
-
-Manipule des fichiers.
-
-- Lire un fichier :
-
-  ```javascript
-  const fs = require('fs');
-
-  fs.readFile('fichier.txt', 'utf8', (err, data) => {
-      if (err) throw err;
-      console.log(data);
-  });
-  ```
-
-- Écrire dans un fichier :
-
-  ```javascript
-  fs.writeFile('nouveau.txt', 'Contenu écrit', (err) => {
-      if (err) throw err;
-      console.log('Fichier créé.');
-  });
-  ```
-
-### 3.2. **http**
-
-Créer un serveur web basique.
-
-```javascript
-const http = require('http');
-
-const server = http.createServer((req, res) => {
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end('Bienvenue sur mon serveur Node.js!');
-});
-
-server.listen(3000, () => {
-    console.log('Serveur en écoute sur le port 3000');
-});
-```
-
-Ouvre `http://localhost:3000` dans ton navigateur.
+| **Module**      | **Fonction**                                   | **Description**                                                                                       |
+|------------------|-----------------------------------------------|-------------------------------------------------------------------------------------------------------|
+| **fs**          | Gestion des fichiers                         | Lire, écrire, supprimer, et manipuler les fichiers locaux.                                            |
+| **http**        | Création de serveurs web                     | Gérer les requêtes et réponses HTTP.                                                                 |
+| **https**       | Création de serveurs sécurisés               | Gérer les requêtes et réponses HTTPS.                                                                |
+| **path**        | Manipulation des chemins de fichiers          | Résoudre les chemins absolus, extensions, etc.                                                       |
+| **os**          | Informations sur le système d'exploitation    | Obtenir les infos CPU, mémoire, et autres détails du système.                                        |
+| **events**      | Gestion des événements                        | Créer et écouter des événements personnalisés.                                                       |
+| **util**        | Outils divers pour le développement           | Convertir des callbacks en promesses, formater des chaînes.                                          |
+| **stream**      | Gestion des flux de données                   | Lire et écrire des données en continu.                                                              |
+| **child_process** | Exécuter des commandes système               | Lancer des processus enfants et interagir avec eux.                                                 |
+| **crypto**      | Fonctions de cryptographie                    | Gérer le chiffrement, le hachage et autres opérations de sécurité.                                   |
+| **dns**         | Résolution DNS                                | Résoudre des noms de domaine ou effectuer des requêtes DNS.                                          |
 
 ---
 
